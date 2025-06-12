@@ -8,7 +8,7 @@ import FormattedDate from "../../components/FormattedDate.astro";
 import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
@@ -55,7 +55,7 @@ const posts = (await getCollection("blog")).sort(
       }
       .title {
         margin: 0;
-        color: rgb(var(--black));
+        color: rgb(var(--text));
         line-height: 1;
       }
       .date {

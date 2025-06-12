@@ -1,18 +1,32 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import { Image } from "astro:assets";
+import ThemeIcon from "@/components/ThemeIcon.astro";
 ---
 
 <header>
   <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
+    <h2>
+      <a href="/" class="flex items-center gap-1">
+        <Image
+          src="/android-chrome-512x512.png"
+          width="256"
+          height="256"
+          alt=""
+          class="mr-1 h-10 w-10 rounded-full"
+        />
+        {SITE_TITLE}</a
+      >
+    </h2>
     <div class="internal-links">
       <HeaderLink href="/">首页</HeaderLink>
       <HeaderLink href="/blog">文章</HeaderLink>
       <HeaderLink href="/about">关于</HeaderLink>
     </div>
     <div class="social-links">
-      <a href="https://github.com/withastro/astro" target="_blank">
+      <ThemeIcon />
+      <a href="https://github.com/ylLin611" target="_blank" class="ml-2">
         <span class="sr-only">去GitHub看看</span>
         <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
           ><path
@@ -28,7 +42,7 @@ import { SITE_TITLE } from "../consts";
   header {
     margin: 0;
     padding: 0 1em;
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    box-shadow: 0 2px 8px rgba(var(--text), 5%);
   }
   h2 {
     margin: 0;
@@ -46,7 +60,7 @@ import { SITE_TITLE } from "../consts";
   }
   nav a {
     padding: 1em 0.5em;
-    color: var(--black);
+    color: var(--text);
     text-decoration: none;
   }
   nav a.active {
